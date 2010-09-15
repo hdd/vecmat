@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/!svn/ver/180/trunk/src/vecmat
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/147/trunk/src/vecmat/__init__.py
+END
+vector.py
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/179/trunk/src/vecmat/vector.py
+END
+matrix.py
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/180/trunk/src/vecmat/matrix.py
+END
+angle.py
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/145/trunk/src/vecmat/angle.py
+END

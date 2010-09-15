@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/181/trunk/src/doc/src/vecmat
+END
+vector.rst
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/181/trunk/src/doc/src/vecmat/vector.rst
+END
+ matrix.rst
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/181/trunk/src/doc/src/vecmat/%20matrix.rst
+END
+angle.rst
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/181/trunk/src/doc/src/vecmat/angle.rst
+END
