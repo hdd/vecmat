@@ -343,23 +343,26 @@ class Matrix(Vector):
 	
 	def mirror(self,axis=None,offset=Vector([0,0,0])):
 		"""
-		Mirror matrix on an axis , and offset 
+		Mirror matrix on an axis , and offset
 		"""
-		if axis != None:
+		if isinstance(axis ,basestring) & axis != None:
 			if axis == "x":
 				axis=Vector([-1.0,1.0,1.0])
-				offset=Vector([1.0,0.0,0.0])*offset
 			elif axis == "y":
 				axis=Vector([1.0,-1.0,1.0])
-				offset=Vector([0.0,1.0,0.0])*offset
 			elif axis == "z":
 				axis=Vector([1.0,1.0,-1.0])
-				offset=Vector([0.0,0.0,1.0])*offset
 			else:
 				raise MatrixError("error defining mirror axis")
-						
-			MirrorMatrix=Matrix([[axis[0],0.0,0.0,0.0],[0.0,axis[1],0.0,0.0],[0.0,0.0,axis[2],0.0],[offset[0],offset[1],offset[2],1.0]])
-			OffsetMatrix=Matrix([[1.0,0.0,0.0,0.0],[0.0,1.0,0.0,0.0],[0.0,0.0,1.0,0.0],[offset[0],offset[1],offset[2],1.0]])
-			return Matrix(self*MirrorMatrix*OffsetMatrix)
+		
+		elif isinstance(axis, Vector):
+			pass
 		else:
-			return None
+			raise MatrixError("Axis has to be Vector or string")
+			
+		MirrorMatrix=Matrix([[axis[0],0.0,0.0,0.0],[0.0,axis[1],0.0,0.0],[0.0,0.0,axis[2],0.0],[0.0,0.0,0.0,1.0]])
+		OffsetMatrix=Matrix([[1.0,0.0,0.0,0.0],[0.0,1.0,0.0,0.0],[0.0,0.0,1.0,0.0],[-offset[0],-offset[1],-offset[2],1.0]])
+		OffsetMatrix2=Matrix([[1.0,0.0,0.0,0.0],[0.0,1.0,0.0,0.0],[0.0,0.0,1.0,0.0],[offset[0],offset[1],offset[2],1.0]])
+	
+		return Matrix(OffsetMatrix*self*MirrorMatrix*OffsetMatrix2)
+	
